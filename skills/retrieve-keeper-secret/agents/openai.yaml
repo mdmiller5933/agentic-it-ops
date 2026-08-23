@@ -1,0 +1,4 @@
+interface:
+  display_name: "Retrieve Keeper Secret"
+  short_description: "Retrieves passwords, API keys, and connection secrets from the Keeper vault on this"
+  default_prompt: "Use $retrieve-keeper-secret to get started."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Power Automate Flow"
+  short_description: "Build, edit, or troubleshoot Microsoft Power Automate cloud flows by driving the browser with Cla..."
+  default_prompt: "Use $build-power-automate-flow to get started."

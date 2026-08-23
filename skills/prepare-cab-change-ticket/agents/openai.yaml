@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare Cab Change Ticket"
+  short_description: "Draft, complete, or review a Contoso IT change ticket (Freshservice change"
+  default_prompt: "Use $prepare-cab-change-ticket to get started."

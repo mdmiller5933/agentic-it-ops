@@ -1,0 +1,4 @@
+interface:
+  display_name: "Draft Contoso It Announcement"
+  short_description: "Drafts Contoso IT company-wide Slack communications in the established Contoso IT"
+  default_prompt: "Use $draft-it-announcement to get started."

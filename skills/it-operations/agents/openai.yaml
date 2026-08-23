@@ -1,0 +1,4 @@
+interface:
+  display_name: "Contoso IT Operations"
+  short_description: "Use Contoso IT operations memory"
+  default_prompt: "Use $it-operations to troubleshoot this endpoint or IT workflow using the saved Contoso runbooks."

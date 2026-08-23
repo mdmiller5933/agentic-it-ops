@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deploy Automox Worklet"
+  short_description: "Author and deploy a custom Automox worklet (evaluation + remediation PowerShell pair) and scope i..."
+  default_prompt: "Use $deploy-automox-worklet to get started."

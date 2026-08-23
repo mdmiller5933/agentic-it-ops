@@ -1,0 +1,45 @@
+﻿{
+    "_comment":  "Canonical MCP servers shared by Claude Code and Codex, and the state manifest that makes deletions stick. Edit here to change both tools, then re-run sync-ai-context.ps1. Values equal to \u0027__ai_sync_preserve__\u0027 are secret-looking env vars deliberately not stored here — each tool keeps its own.",
+    "ignore":  {
+                   "claude":  {
+
+                              },
+                   "codex":  "node_repl"
+               },
+    "servers":  {
+                    "automox-mcp":  {
+                                        "command":  "C:\\Program Files (x86)\\Python314\\python.exe",
+                                        "args":  [
+                                                     "-m",
+                                                     "keeper_secrets_manager_cli",
+                                                     "-p",
+                                                     "contoso",
+                                                     "exec",
+                                                     "--",
+                                                     "C:/Users/z_operatorsvc/.local/bin/uvx.exe",
+                                                     "automox-mcp==2.2.7"
+                                                 ],
+                                        "env":  {
+                                                    "AUTOMOX_ACCOUNT_UUID":  "keeper://7rOFNUuckyxKAAs2MVhWfQ/custom_field/AUTOMOX_ACCOUNT_UUID",
+                                                    "AUTOMOX_API_KEY":  "keeper://7rOFNUuckyxKAAs2MVhWfQ/field/password",
+                                                    "AUTOMOX_ORG_ID":  "keeper://7rOFNUuckyxKAAs2MVhWfQ/custom_field/AUTOMOX_ORG_ID",
+                                                    "PYTHONIOENCODING":  "utf-8",
+                                                    "PYTHONUTF8":  "1"
+                                                }
+                                    },
+                    "slack":  {
+                                  "url":  "https://mcp.slack.com/mcp"
+                              },
+                    "workiq":  {
+                                   "command":  "C:\\Users\\AveryOperatorContrac\\AppData\\Roaming\\npm\\node_modules\\@microsoft\\workiq\\bin\\win-x64\\workiq.exe",
+                                   "args":  [
+                                                "mcp",
+                                                "--account",
+                                                "avery.operator@contoso.com"
+                                            ],
+                                   "claudeOnly":  {
+                                                      "type":  "stdio"
+                                                  }
+                               }
+                }
+}

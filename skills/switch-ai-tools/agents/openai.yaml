@@ -1,0 +1,4 @@
+interface:
+  display_name: "Switch Ai Tools"
+  short_description: "Hand an in-progress task from one AI coding tool to another (Claude Code, Codex, Cursor) so the n..."
+  default_prompt: "Use $switch-ai-tools to get started."

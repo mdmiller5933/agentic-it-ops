@@ -1,0 +1,4 @@
+interface:
+  display_name: "Freshservice Automation Builder"
+  short_description: "Build Freshservice Workflow Automators"
+  default_prompt: "Use $freshservice-automation-builder to create or update a Freshservice workflow automation."

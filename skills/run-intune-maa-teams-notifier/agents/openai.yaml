@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run Intune MAA Teams Notifier"
+  short_description: "Send pending Intune MAA approvals to Teams"
+  default_prompt: "Use $run-intune-maa-teams-notifier to run the Intune MAA Teams notification check."

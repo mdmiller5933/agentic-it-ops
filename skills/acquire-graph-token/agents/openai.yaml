@@ -1,0 +1,4 @@
+interface:
+  display_name: "Acquire Graph Token"
+  short_description: "Acquire a working delegated Microsoft Graph token from an agent shell in the Contoso tenant when Co..."
+  default_prompt: "Use $acquire-graph-token to get started."

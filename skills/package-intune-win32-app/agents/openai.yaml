@@ -1,0 +1,4 @@
+interface:
+  display_name: "Package Intune Win32 App"
+  short_description: "Build repeatable Intune Win32 app packages"
+  default_prompt: "Use $package-intune-win32-app to create scripts, detection, folders, and an .intunewin package for this installer."

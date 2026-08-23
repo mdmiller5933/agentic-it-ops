@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Intune Byod App Protection"
+  short_description: "Review Contoso Intune BYOD app protection policies and Conditional Access enforcement for iOS/Andro..."
+  default_prompt: "Use $review-intune-byod-app-protection to get started."

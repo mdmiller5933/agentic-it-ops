@@ -1,0 +1,4 @@
+interface:
+  display_name: "Enroll Apple Device Abm Intune"
+  short_description: "Enroll a company-owned Apple device (iPad, iPhone, Mac) into Apple Business Manager and Microsoft..."
+  default_prompt: "Use $enroll-apple-device-abm-intune to get started."

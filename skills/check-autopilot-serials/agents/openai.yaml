@@ -1,0 +1,4 @@
+interface:
+  display_name: "Autopilot Serial Check"
+  short_description: "Check serials in Autopilot and Intune"
+  default_prompt: "Use $check-autopilot-serials to check whether these serial numbers are enrolled in Autopilot: SD004LB7 SD004LB0."

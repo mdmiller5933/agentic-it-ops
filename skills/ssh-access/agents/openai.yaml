@@ -1,0 +1,4 @@
+interface:
+  display_name: "Contoso SSH Access"
+  short_description: "Fast SSH access for managed Contoso endpoints"
+  default_prompt: "Use $ssh-access to SSH into a Contoso-managed Windows endpoint by hostname."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Fedex Label"
+  short_description: "Create a FedEx shipping label by collecting shipment details conversationally and calling the Fed..."
+  default_prompt: "Use $create-fedex-label to get started."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Triage Windows Bsod"
+  short_description: "Diagnose why a Windows machine unexpectedly rebooted, blue-screened, or froze by"
+  default_prompt: "Use $triage-windows-bsod to get started."

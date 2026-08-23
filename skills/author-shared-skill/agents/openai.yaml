@@ -1,0 +1,4 @@
+interface:
+  display_name: "Author Shared Skill"
+  short_description: "Create, update, or repair an agent skill shared between Claude Code and Codex through the ~/.ai-s..."
+  default_prompt: "Use $author-shared-skill to get started."

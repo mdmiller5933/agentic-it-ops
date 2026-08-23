@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manage Cato Client"
+  short_description: "Package, configure, diagnose, and fleet-remediate the Cato Networks Windows client for Contoso."
+  default_prompt: "Use $manage-cato-client to get started."

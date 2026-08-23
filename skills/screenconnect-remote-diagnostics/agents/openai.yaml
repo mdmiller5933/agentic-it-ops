@@ -1,0 +1,4 @@
+interface:
+  display_name: "ScreenConnect Remote Diagnostics"
+  short_description: "Run guarded ScreenConnect diagnostics"
+  default_prompt: "Use $screenconnect-remote-diagnostics to investigate this endpoint with authorized ScreenConnect API diagnostics."

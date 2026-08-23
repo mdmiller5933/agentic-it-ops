@@ -1,0 +1,4 @@
+interface:
+  display_name: "Query Crowdstrike Falcon"
+  short_description: "Query Contoso CrowdStrike Falcon for hosts, alerts, Spotlight vulnerabilities, host groups, and pre..."
+  default_prompt: "Use $query-crowdstrike-falcon to get started."
