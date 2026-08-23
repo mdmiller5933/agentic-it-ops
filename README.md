@@ -9,19 +9,15 @@ All employer identifiers are anonymized (see [ANONYMIZATION.md](ANONYMIZATION.md
 ## Architecture
 
 ```mermaid
-flowchart TD
-    subgraph shared [Shared state - synced bidirectionally]
-        SK[skills/  23 agent skills]
-        ME[per-project memory]
-        GU[global guidance file]
-        MC[mcp-servers.json  canonical MCP set]
-        HO[handoff/  active task note]
-    end
-    CC[Claude Code] <--> shared
-    CX[Codex] <--> shared
-    CU[Cursor  one-way consumer] --- shared
-    shared --> OPS[Fleet operations:<br>Graph/Intune, Automox, ScreenConnect,<br>Freshservice, Keeper, CrowdStrike, Rapid7]
+flowchart LR
+    CC["Claude Code"] <-->|"sync at<br>session start"| SYNC
+    CX["Codex"] <-->|"sync at<br>session start"| SYNC
+    CU["Cursor"] <-. "receives a<br>projection only" .-> SYNC
+    SYNC["sync engine<br>newest wins &middot; backs up before overwrite<br>honors deletions &middot; skips true conflicts"]
+    SYNC <-->|"mirrors"| STATE[("shared state<br>23 skills &middot; project memory<br>guidance &middot; MCP server set<br>active handoff note")]
 ```
+
+*One brain, three interchangeable operators. Cursor consumes; Claude Code and Codex read and write.*
 
 Three pieces make it work:
 
@@ -34,6 +30,27 @@ Three pieces make it work:
 MCP servers get the same treatment: one canonical `mcp-servers.json` projected into each tool's native config, with secret-looking values never stored — they stay as vault references (`keeper://...`) and each tool resolves them locally.
 
 ## Guardrails, because agents touch production
+
+```mermaid
+flowchart LR
+    subgraph free["reads are free"]
+        direction TB
+        P["operator prompt"] --> R["it-operations index<br>routes to specialist skill"]
+        R --> RO["read-only investigation<br>Graph &middot; Automox &middot; tickets &middot; endpoints"]
+    end
+    subgraph gated["writes are gated"]
+        direction TB
+        A["human approval,<br>in the conversation"] -->|"approved"| W["one scoped write"]
+        W --> V["re-read the originating<br>system to verify"]
+    end
+    free --> G{"needs a<br>state change?"}
+    G -->|"yes"| gated
+    G -->|"no"| REP["report to<br>operator"]
+    gated --> REP
+```
+
+*How every task runs: investigation costs nothing, state changes pass through a human, and writes are verified in the system that owns them.*
+
 
 These are not aspirational; each one exists because of a real incident or near-miss, and they're written into the skills the agents load:
 
